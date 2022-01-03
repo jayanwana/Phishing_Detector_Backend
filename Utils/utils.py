@@ -2,7 +2,7 @@ from io import StringIO
 from html.parser import HTMLParser
 import unicodedata
 import re
-from catboost import Pool, CatBoostClassifier
+from catboost import CatBoostClassifier
 
 contractions = {
     "ain't": "am not",
@@ -171,13 +171,17 @@ def remove_special_chars(x):
 
 
 def clean_text(email):
-    return remove_special_chars(cont_to_exp(strip_tags(email.lower())))
+    return remove_special_chars(remove_urls(remove_emails(cont_to_exp(strip_tags(email.lower())))))
 
 
 def make_prediction(email):
+    # Clean the email
     email = clean_text(email)
+    # Initialize the model class
     model = CatBoostClassifier()
+    # Load the trained model
     model.load_model('model.cbm')
+    # Make the prediction
     pred = model.predict([email])
     result = {
         'email': email,
