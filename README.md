@@ -41,7 +41,7 @@ The Catboost model was trained with a sample dataset comprising 9,000
 phishing and non-phishing emails, with and accuracy of 98.83% on the test dataset.
 The model was tuned using nested cross-validation techniques and based of the results of this, 
 the hyper-parameters were selected.  
-The front-end of this application is a simple Chrome Browser extension that can be found [Here]()
+The front-end of this application is a simple Chrome Browser extension that can be found [Here](https://github.com/jayanwana/Phishing_Detector.git)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
