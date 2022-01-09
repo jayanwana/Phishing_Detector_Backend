@@ -1,3 +1,4 @@
+<!--suppress HtmlDeprecatedAttribute -->
 <div id="top"></div>
 
 <div align="center">
@@ -100,7 +101,6 @@ All project dependencies are listed in the Pipfile of the project
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 After installation, run the application with  
@@ -115,6 +115,13 @@ or ```
     flask run
     ```  
 _For more examples, please refer to the [Documentation](https://flask.palletsprojects.com/en/2.0.x/)_
+
+### Testing
+After running the application, it can be tested using the chrome extension,
+or any other http request making software for example, cURL
+```shell
+curl -X POST -H "Content-Type: application/json"  -d "{\"text\": \"<Text for classification goes here>\"}" http://127.0.0.1:5000/classify
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
